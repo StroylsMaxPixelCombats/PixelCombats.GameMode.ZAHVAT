@@ -184,7 +184,7 @@ BreackGraph.WeakBlocks = GameMode.Parameters.GetBool("LoosenBlocks");
 
 // Создаём визуализацию зон, защиты
 var defView = AreaViewService.GetContext().Get("DefView");
-defView.color=new Color(0, 0, 1, 0);
+defView.Color = new Color(0, 0, 1, 0);
 defView.Tags = [ DefAreaTag ];
 defView.Enable = true;
 
