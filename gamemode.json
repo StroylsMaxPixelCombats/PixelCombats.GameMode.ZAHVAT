@@ -14,6 +14,18 @@
         "Name": "MapRotation",
         "DisplayName": "СМЕНА КАРТ",
         "Default": true
+      },
+      {
+        "Name": "FriendlyFire",
+        "DisplayName": "ОГОНЬ ПО СВОИМ"
+      },
+      {
+        "Name": "LoosenBlocks",
+        "DisplayName": "СЛАБЫЕ БЛОКИ"
+      },
+      {
+        "Name": "PartialDesruction"
+        "DisplayName": "ЧАСТИЧНОЕ РАЗРУШЕНИЕ"
       }
     ]
   }
