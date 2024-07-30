@@ -1,6 +1,6 @@
 //var System = importNamespace('System');
-import { DisplayValueHeader, Color } from 'pixel_combats';
-import { Game, GameMode, Inventory, Spawns, LeaderBoard, Properties, Damage, BreackGraph, Teams, Ui, Timers, TeamsBalancer, BuildBlocksSet, Players, AreaPlayerTriggerService, AreaViewService } from 'pixel_combats/room';
+import { DisplayValueHeader, Color } from 'pixel_combats/basic';
+import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, BreackGraph, Ui, Properties, GameMode, Spawns, Timers, TeamsBalancer, AreaPlayerTriggerService, AreaViewService } from 'pixel_combats/room';
 import * as default_timer from './default_timer.js';
 
 // Константы
