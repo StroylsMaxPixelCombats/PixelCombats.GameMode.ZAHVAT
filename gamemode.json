@@ -2,10 +2,17 @@
   "Name": "ЗАХВАТ",
   "Description": "Захватывайте и защищайте зоны чтобы получить приемущество в противоборстве двух команд",
   "StartClientVersion": 334,
+  "MapFilter": {
+    "IsBlank": false,
+    "HasParcourEnd": false
+  },
   "MapLists": [
     {
       "MapListId": 324,
       "Name": "Официальные карты"
+    },
+    {
+      "MapListId": 581
     }
   ],
   "Parameters": {
@@ -16,18 +23,18 @@
         "Default": true
       },
       {
-        "Name": "FriendlyFire",
-        "DisplayName": "ОГОНЬ ПО СВОИМ"
+        "Name": "PartialDesruction",
+        "DisplayName": "ЛОМАЮТСЯ ТОЛЬКО БЛОКИ ИГРОКОВ"
       },
       {
         "Name": "LoosenBlocks",
         "DisplayName": "СЛАБЫЕ БЛОКИ"
       },
       {
-        "Name": "PartialDesruction",
-        "DisplayName": "ЧАСТИЧНОЕ РАЗРУШЕНИЕ"
-       }
-      ],
+        "Name": "FriendlyFire",
+        "DisplayName": "УРОН ПО СВОИМ"
+      }
+    ],
     "Dropdown": [
       {
         "Name": "default_game_mode_length",
@@ -45,6 +52,9 @@
           {
             "Name": "Length_ДЛИННАЯ",
             "DisplayName": "ДЛИННАЯ"
+          }
+        ]
       }
     ]
   }
+}
