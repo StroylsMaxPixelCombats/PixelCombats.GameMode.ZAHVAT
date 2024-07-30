@@ -26,7 +26,30 @@
       {
         "Name": "PartialDesruction",
         "DisplayName": "ЧАСТИЧНОЕ РАЗРУШЕНИЕ"
+       }
+      ],
+    "Dropdown": [
+      {
+        "Name": "default_game_mode_length",
+        "DisplayName": "ДЛИННА МАТЧА",
+        "Default": "Length_КОРОТКАЯ",
+        "Variants": [
+          {
+            "Name": "Length_КОРОТКАЯ",
+            "DisplayName": "КОРОТКАЯ"
+          },
+          {
+            "Name": "Length_СРЕДНЯЯ",
+            "DisplayName": "СРЕДНЯЯ"
+          },
+          {
+            "Name": "Length_ДЛИННАЯ",
+            "DisplayName": "ДЛИННАЯ"
       }
     ]
   }
+ }
 }
+
+
+
