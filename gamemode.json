@@ -44,7 +44,7 @@
         "Variants": [
           {
             "Name": "Length_S",
-            "DisplayName": "Длинный МАТЧ"
+            "DisplayName": "Быстрый МАТЧ"
           },
           {
             "Name": "Length_M",
@@ -52,7 +52,7 @@
           },
           {
             "Name": "Length_L",
-            "DisplayName": "Быстрый МАТЧ"
+            "DisplayName": "Длинный МАТЧ"
           }
         ]
       }
