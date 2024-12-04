@@ -51,8 +51,6 @@ var captureProperties = [];
 var capturedAreaIndexProp = Properties.GetContext().Get("RedCaptiredIndex");
 
 function InitializeDefAreas() {
-	defAreas = AreaService.GetByTag(DefAreaTag);
-	captureAreas = AreaService.GetByTag(CaptureAreaTag);
 	// Ограничитель
 	if (captureAreas == null) return;
 	if (captureAreas.length == 0) return;
