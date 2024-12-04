@@ -1,5 +1,5 @@
 {
-  "Name": "ЗАХВАТ",
+  "Name": "Захват <i>(API 1.0)</i>",
   "Description": "Захватывайте и защищайте зону чтобы получить приемущество в противоборстве двух команд",
   "StartClientVersion": 334,
   "MapFilter": {
@@ -34,27 +34,6 @@
         "Name": "FriendlyFire",
         "DisplayName": "УРОН ПО СВОИМ"
       }
-    ],
-    "Dropdown": [
-      {
-        "Name": "default_game_mode_length",
-        "DisplayName": "ДЛИННА МАТЧА",
-        "Default": "Length_КОРОТКАЯ",
-        "Variants": [
-          {
-            "Name": "Length_КОРОТКАЯ",
-            "DisplayName": "КОРОТКАЯ"
-          },
-          {
-            "Name": "Length_СРЕДНЯЯ",
-            "DisplayName": "СРЕДНЯЯ"
-          },
-          {
-            "Name": "Length_ДЛИННАЯ",
-            "DisplayName": "ДЛИННАЯ"
-          }
         ]
       }
-    ]
   }
-}
