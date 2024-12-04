@@ -1,12 +1,13 @@
-//var System = importNamespace('System');
 import { DisplayValueHeader, Color } from 'pixel_combats/basic';
 import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, BreackGraph, Ui, Properties, GameMode, Spawns, Timers, TeamsBalancer, AreaPlayerTriggerService, AreaViewService } from 'pixel_combats/room';
 import * as default_timer from './default_timer.js';
 
+try {
+	
 // Константы
 var WaitingPlayersTime = 10;
 var BuildBaseTime = 60;
-var GameModeTime = default_timer.game_mode_length_seconds();
+var GameModeTime = 600;1
 var DefPoints = GameModeTime * 0.2;
 var EndOfMatchTime = 10;
 var DefPointsMaxCount = 30;
@@ -300,19 +301,20 @@ Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 // Создаём, команды
 Teams.Add("Blue", "Teams/Blue", new Color(0, 0, 1, 0));
 Teams.Add("Red", "Teams/Red", new Color(1, 0, 0, 0));
-var blueTeam = Teams.Get("Blue");
-var redTeam = Teams.Get("Red");
-blueTeam.Spawns.SpawnPointsGroups.Add(1);
-redTeam.Spawns.SpawnPointsGroups.Add(2);
-blueTeam.Build.BlocksSet.Value = BuildBlocksSet.Blue;
-redTeam.Build.BlocksSet.Value = BuildBlocksSet.Red;
+var BlueTeam = Teams.Get("Blue");
+var RedTeam = Teams.Get("Red");
+BlueTeam.Spawns.SpawnPointsGroups.Add(1);
+RedTeam.Spawns.SpawnPointsGroups.Add(2);
+BlueTeam.Build.BlocksSet.Value = BuildBlocksSet.Blue;
+RedTeam.Build.BlocksSet.Value = BuildBlocksSet.Red;
 
 // Делаем спавн, по 5 секунд
 Spawns.GetContext().RespawnTime.Value = 5;
 
 // Задаём макс очков, синей команды
-//var maxDeaths = Players.MaxCount * 5;
-blueTeam.Properties.Get("Deaths").Value = DefPoints;
+var maxDeaths = Players.MaxCount * 5;
+BlueTeam.Properties.Get("Deaths").Value = DefPoints;
+RedTeam.Properties.Get("Deaths").Value = DefPoints;
 //redTeam.Properties.Get("Deaths").Value = maxDeaths;
 // Задаём, что выводить в лидербордах
 LeaderBoard.PlayerLeaderBoardValues = [
@@ -436,43 +438,45 @@ function SetBuildMode()
 
 	stateProp.Value = BuildModeStateValue;
 	Ui.GetContext().Hint.Value = "ChangeTeamHint";
-	blueTeam.Ui.Hint.Value = "PrepareToDefBlueArea";
-	redTeam.Ui.Hint.Value = "WaitingForBlueBuildHint";
+	BlueTeam.Ui.Hint.Value = "PrepareToDefBlueArea";
+	RedTeam.Ui.Hint.Value = "WaitingForBlueBuildHint";
 
-	blueTeam.Inventory.Main.Value = false;
-	blueTeam.Inventory.Secondary.Value = false;
-	blueTeam.Inventory.Melee.Value = true;
-	blueTeam.Inventory.Explosive.Value = false;
-	blueTeam.Inventory.Build.Value = true;
-	blueTeam.Inventory.BuildInfinity.Value = true;
+	BlueTeam.Inventory.Main.Value = false;
+	BlueTeam.Inventory.Secondary.Value = false;
+	BlueTeam.Inventory.Melee.Value = true;
+	BlueTeam.Inventory.Explosive.Value = false;
+	BlueTeam.Inventory.Build.Value = true;
+	BlueTeam.Inventory.BuildInfinity.Value = true;
 
-	redTeam.Inventory.Main.Value = false;
-	redTeam.Inventory.Secondary.Value = false;
-	redTeam.Inventory.Melee.Value = false;
-	redTeam.Inventory.Explosive.Value = false;
-	redTeam.Inventory.Build.Value = false;
+	RedTeam.Inventory.Main.Value = false;
+	RedTeam.Inventory.Secondary.Value = false;
+	RedTeam.Inventory.Melee.Value = false;
+	RedTeam.Inventory.Explosive.Value = false;
+	RedTeam.Inventory.Build.Value = false;
 
 	mainTimer.Restart(BuildBaseTime);
-	Spawns.GetContext().enable = true;
+	Spawns.GetContext().Enable = true;
 	SpawnTeams();
 }
 function SetGameMode() 
 {
 	stateProp.Value = GameStateValue;
-	blueTeam.Ui.Hint.Value = "!Защищайте, синию зону!";
+	BlueTeam.Ui.Hint.Value = "!Защищайте, синию зону!";
 	redTeam.Ui.Hint.Value = "!Захватите, синию зону!";
 
-	blueTeam.Inventory.Main.Value = true;
-	blueTeam.Inventory.Secondary.Value = true;
-	blueTeam.Inventory.Melee.Value = true;
-	blueTeam.Inventory.Explosive.Value = true;
-	blueTeam.Inventory.Build.Value = true;
+	BlueTeam.Inventory.Main.Value = true;
+	BlueTeam.Inventory.MainInfinity.Value = true;
+	BlueTeam.Inventory.Secondary.Value = true;
+	BlueTeam.Inventory.SecondaryInfinity.Value = true;
+	BlueTeam.Inventory.Melee.Value = true;
+	BlueTeam.Inventory.Explosive.Value = true;
+	BlueTeam.Inventory.Build.Value = true;
 
-	redTeam.Inventory.Main.Value = true;
-	redTeam.Inventory.Secondary.Value = true;
-	redTeam.Inventory.Melee.Value = true;
-	redTeam.Inventory.Explosive.Value = true;
-	redTeam.Inventory.Build.Value = true;
+	RedTeam.Inventory.Main.Value = true;
+	RedTeam.Inventory.Secondary.Value = true;
+	RedTeam.Inventory.Melee.Value = true;
+	RedTeam.Inventory.Explosive.Value = true;
+	RedTeam.Inventory.Build.Value = true;
 
 	mainTimer.Restart(GameModeTime);
 	defTickTimer.RestartLoop(DefTimerTickInderval);
@@ -484,10 +488,9 @@ function BlueWin()
 	stateProp.Value = EndOfMatchStateValue;
 	Ui.GetContext().Hint.Value = "!Конец, МАТЧА!";
 
-	var Spawns = Spawns.GetContext();
 	Spawns.GetContext().Enable = false;
 	Spawns.GetContext().Despawn();
-	Game.GameOver(blueTeam);
+	Game.GameOver(BlueTeam);
 	mainTimer.Restart(EndOfMatchTime);
 }
 function RedWin()
@@ -495,10 +498,9 @@ function RedWin()
 	stateProp.Value = EndOfMatchStateValue;
 	Ui.GetContext().Hint.Value = "!ЗАХВАТ, ЗОНЫ!";
 
-	var Spawns = Spawns.GetContext();
 	Spawns.GetContext().Enable = false;
 	Spawns.GetContext().Despawn();
-	Game.GameOver(redTeam);
+	Game.GameOver(RedTeam);
 	mainTimer.Restart(EndOfMatchTime);
 }
 function RestartGame() {
@@ -508,4 +510,11 @@ function RestartGame() {
 function SpawnTeams() {
 	var Spawns = Teams.Spawn();
     Spawns.GetContext().Spawn();
+}
+
+
+  } catch (e) {
+            Players.All.forEach(p => {
+                p.PopUp(`${e.name}: ${e.message} ${e.stack}`);
+        });
 }
