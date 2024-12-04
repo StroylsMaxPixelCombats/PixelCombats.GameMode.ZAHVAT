@@ -5,7 +5,7 @@ import * as default_timer from './default_timer.js';
 try {
 	
 // Константы
-var WaitingPlayersTime = 10;
+var WaitingPlayersTime = 3;
 var BuildBaseTime = 31;
 var GameModeTime = default_timer.game_mode_length_seconds();
 var DefPoints = GameModeTime * 0.2;
