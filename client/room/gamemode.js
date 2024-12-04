@@ -50,11 +50,6 @@ var captureViews = [];
 var captureProperties = [];
 var capturedAreaIndexProp = Properties.GetContext().Get("RedCaptiredIndex");
 
-// Задаём цвет всем зонам, для захвата
-Map.OnLoad.Add(function() {
-	InitializeDefAreas();
-});
-
 function InitializeDefAreas() {
 	defAreas = AreaService.GetByTag(DefAreaTag);
 	captureAreas = AreaService.GetByTag(CaptureAreaTag);
