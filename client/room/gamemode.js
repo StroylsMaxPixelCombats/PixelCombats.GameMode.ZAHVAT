@@ -6,7 +6,7 @@ try {
 	
 // Константы
 var WaitingPlayersTime = 10;
-var BuildBaseTime = 60;
+var BuildBaseTime = 31;
 var GameModeTime = 600;1
 var DefPoints = GameModeTime * 0.2;
 var EndOfMatchTime = 10;
