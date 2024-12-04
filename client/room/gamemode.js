@@ -44,8 +44,7 @@ var PrepareToDefBlueArea = "GameModeHint/PrepareToDefBlueArea";
 // Постоянные, переменные
 var mainTimer = Timers.GetContext().Get("Main");
 var defTickTimer = Timers.getContext().Get("DefTimer");
-var stateProp = Properties.GetContext().Get("State");
-var defAreas = AreaService.GetByTag("DefAreaTag");
+var StateProp = Properties.GetContext().Get("State");
 var captureAreas = AreaService.GetByTag("CaptureAreaTag");
 var captureTriggers = [];
 var captureViews = [];
