@@ -7,7 +7,7 @@ try {
 // Константы
 var WaitingPlayersTime = 10;
 var BuildBaseTime = 31;
-var GameModeTime = 600;1
+var GameModeTime = default_timer.game_mode_length_seconds();
 var DefPoints = GameModeTime * 0.2;
 var EndOfMatchTime = 10;
 var DefPointsMaxCount = 30;
