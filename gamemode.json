@@ -34,7 +34,28 @@
         "Name": "FriendlyFire",
         "DisplayName": "УРОН ПО СВОИМ"
       }
-    ]    
+      ],
+    "Dropdown": [
+      {
+        "Name": "Длинны МАТЧА:",
+        "DisplayName": "GmParams/Length",
+        "Default": "Length_M",
+        "Order": 6,
+        "Variants": [
+          {
+            "Name": "Length_S",
+            "DisplayName": "Длинный МАТЧ"
+          },
+          {
+            "Name": "Length_M",
+            "DisplayName": "Средний МАТЧ"
+          },
+          {
+            "Name": "Length_L",
+            "DisplayName": "Быстрый МАТЧ"
+          }
+        ]
+      }
+    ]
   }
 }
-
