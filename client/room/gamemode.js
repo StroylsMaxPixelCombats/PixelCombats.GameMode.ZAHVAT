@@ -79,7 +79,6 @@ function InitializeDefAreas() {
 		captureProperties.push(prop);
 	}
 }
-InitializeDefAreas();
 //function LogTrigger(player, trigger) {
 //	log.debug("вошли в " + trigger);
 //}
