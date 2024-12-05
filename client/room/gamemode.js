@@ -1,5 +1,5 @@
 import { DisplayValueHeader, Color } from 'pixel_combats/basic';
-import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, BreakGraph, Ui, Properties, GameMode, Spawns, Timers, TeamsBalancer, AreaPlayerTriggerService, AreaViewService } from 'pixel_combats/room';
+import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, BreakGraph, Ui, Properties, GameMode, Spawns, Timers, TeamsBalancer, AreaPlayerTriggerService, AreaService, AreaViewService } from 'pixel_combats/room';
 import * as defaultTimer from './default_timer.js';
 
 try {
@@ -19,9 +19,9 @@ try {
     const RedCaptureW = 1; // вес красных при захвате спавна
     const BlueCaptureW = 2; // вес синих при захвате спавна
     const CaptureRestoreW = 1; // сколько очков отнимается, если нет красных в зоне для захвата
-    const UnCapturedColor = { r: 1, g: 1, b: 1 };
-    const FakeCapturedColor = { r: 0, g: 1, b: 0 }; // к какому цвету стремится зона при ее захвате
-    const CapturedColor = { r: 1 };
+    const UnCapturedColor = new Color(1, 1, 1, 0);
+    const FakeCapturedColor = new Color(0, 1, 0, 0); // к какому цвету стремится зона при ее захвате
+    const CapturedColor = new Color(1, 0, 0, 0);
     const MaxSpawnsByArea = 25; // макс спавнов на зону
 
     // константы
