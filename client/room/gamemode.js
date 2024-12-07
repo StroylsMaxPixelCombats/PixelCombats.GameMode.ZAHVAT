@@ -192,6 +192,8 @@ defView.color = ProtectiveZonaColor;
 defView.Tags = [ DefAreaTag ];
 defView.Enable = true;
 
+try {
+
 // Создаём триггер, зон защиты
 var defTrigger = AreaPlayerTriggerService.Get("DefTrigger");
 defTrigger.Tags = [DefAreaTag];
@@ -511,8 +513,10 @@ function SpawnTeams() {
     Spawns.GetContext().Spawn();
 			 }
 
-} catch (e) {
+ } catch (e) {
+} catch (b) {
 	Players.All.forEach(p => {
                 Player.PopUp(`${e.name}: ${e.message} ${e.stack}`);
+		Player.PopUp(`${b.name}: ${b.message} ${b.stack}`);
         });
 }
