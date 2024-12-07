@@ -522,7 +522,7 @@ var Spawns = Teams.Spawn();
 }
 
 } catch (e) {
-    Players.All.forEach(p => {
-        Player.PopUp(`${e.name}: ${e.message} ${e.stack}`);
-    });
+	Players.All.forEach(p => {
+                Player.PopUp(`${e.name}: ${e.message} ${e.stack}`);
+        });
 }
