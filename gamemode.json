@@ -1,40 +1,21 @@
 {
-  "Name": "ЗАХВАТ <i>(API 1.0)</i>",
-  "Description": "Захватывайте и защищайте зону чтобы получить приемущество в противоборстве двух команд",
+  "Name": "ЗАХВАТ <i>Al(API 1.0)</i>",
+  "Description": "Захватывайте и защищайте зоны, чтобы получить приемущество в противоборстве двух команд",
   "StartClientVersion": 334,
-  "MapFilter": {
-    "IsBlank": false,
-    "HasParcourEnd": false
-  },
   "MapLists": [
     {
       "MapListId": 324,
       "Name": "Официальные карты"
-    },
-    {
-      "MapListId": 581
     }
   ],
   "Parameters": {
     "Bool": [
       {
         "Name": "MapRotation",
-        "DisplayName": "СМЕНА КАРТ",
+        "DisplayName": "GmParams/MapRotation",
         "Default": true
-      },
-      {
-        "Name": "PartialDesruction",
-        "DisplayName": "ЛОМАЮТСЯ ТОЛЬКО БЛОКИ ИГРОКОВ"
-      },
-      {
-        "Name": "LoosenBlocks",
-        "DisplayName": "СЛАБЫЕ БЛОКИ"
-      },
-      {
-        "Name": "FriendlyFire",
-        "DisplayName": "УРОН ПО СВОИМ"
       }
-      ],
+     ],
     "Dropdown": [
       {
         "Name": "default_game_mode_length",
