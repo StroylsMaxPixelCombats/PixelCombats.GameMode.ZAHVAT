@@ -15,28 +15,8 @@
         "DisplayName": "GmParams/MapRotation",
         "Default": true
       }
-     ],
-    "Dropdown": [
-      {
-        "Name": "default_game_mode_length",
-        "DisplayName": "Длинны МАТЧА:",
-        "Default": "Length_M",
-        "Order": 6,
-        "Variants": [
-          {
-            "Name": "Length_S",
-            "DisplayName": "Быстрый МАТЧ"
-          },
-          {
-            "Name": "Length_M",
-            "DisplayName": "Средний МАТЧ"
-          },
-          {
-            "Name": "Length_L",
-            "DisplayName": "Длинный МАТЧ"
-          }
-        ]
-      }
     ]
   }
 }
+
+    
