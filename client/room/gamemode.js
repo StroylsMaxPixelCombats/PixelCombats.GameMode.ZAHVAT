@@ -519,10 +519,10 @@ var Spawns = Teams.Spawn();
 }
 
 } catch (e) {
-	Players.All.forEach(p => msg.Show(`(error.name) ${e.name}: (error.message) ${e.message}, (error.stack) ${e.stack};`));
+        Players.All.forEach(p => {
+                msg.Show(`${e.name}: ${e.message} ${e.stack}`);
+        });
 }
-
-
 
 	
 
