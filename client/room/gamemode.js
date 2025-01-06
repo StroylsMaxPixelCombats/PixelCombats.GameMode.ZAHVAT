@@ -1,5 +1,5 @@
 import { DisplayValueHeader, Color } from 'pixel_combats/basic';
-import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, BreakGraph, Ui, Properties, GameMode, Spawns, Timers, TeamsBalancer, AreaPlayerTriggerService, AreaViewService } from 'pixel_combats/room';
+import { Game, Players, Inventory, LeaderBoard, BuildBlocksSet, Teams, Damage, BreakGraph, Ui, Properties, GameMode, Spawns, Timers, TeamsBalancer, AreaPlayerTriggerService, AreaViewService, msg } from 'pixel_combats/room';
 
 try {
 
@@ -516,6 +516,10 @@ function RestartGame() {
 function SpawnTeams() {
 var Spawns = Teams.Spawn();
 	Spawns.GetContext().Spawn();
+}
+
+} catch (e) {
+	Players.All.forEach(p => msg.Show(`(error.name) ${e.name}: (error.message) ${e.message}, (error.stack) ${e.stack};`));
 }
 
 
