@@ -28,7 +28,12 @@ const SAVE_POINTS_COUNT = 10;
 
 /* All, constants - name: */
 const WITING_PLAYERS_STATE_VALUE = "WaitingPLAYERS";
+const BUILD_MODE_STATE_VALUE = "BuildMODE";
+const GAME_MODE_STATE_VALUE = "GAME";
 const 
+
+
+
 
 
 
