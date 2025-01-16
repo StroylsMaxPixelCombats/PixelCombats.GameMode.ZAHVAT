@@ -10,7 +10,6 @@ const GAME_MODE_TIME = 601;
 const END0F_MATCH_TIME = 11;
 const DEF_TIMER_TICK_IN_DERVAL = 1;
 const DEF_POINTS = GAME_MODE_TIME * 0.2;
-const 
 // Color, constans:
 const BlUE_COLOR = NEW_Color(0, 0, 1, 0);
 const FACKE_CAPTURE_RED_COLOR = NEW_Color(1, 0, 0, 0);
