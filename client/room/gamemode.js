@@ -3,9 +3,14 @@ import * as Basic from 'pixel_combats/basic';
 import * as Room from 'pixel_combats/room';
 
 // Создаём, команды:
-Room.Teams.Add('Blue', '<b><size=30><color=#0d177c>ß</color><color=#03088c>l</color><color=#0607b0>ᴜ</color><color=#1621ae>E</color></size></b>', new Basic.Color(0, 0, 1, 0)), Room.Teams.Add('Red', '<b><size=30><color=#962605>尺</color><color=#9a040c>ᴇ</color><color=#b8110b>D</color></size></b>', new Basic.Color(1, 0, 0, 0));
-let RedTeam = Room.Teams.Get('Red'), let BlueTeam = Room.Teams.Get('Blue');
-BlueTeam.Spawns.SpawnPointsGroups.Add(1), BlueTeam.Build.BlocksSet.Value = Room.BuildBlocksSet.Blue, RedTeam.Spawns.SpawnPointsGroups.Add(2), RedTeam.Build.BlocksSet.Value = Room.Build.BlocksSet.Red;
+Room.Teams.Add('Blue', '<b><size=30><color=#0d177c>ß</color><color=#03088c>l</color><color=#0607b0>ᴜ</color><color=#1621ae>E</color></size></b>', new Basic.Color(0, 0, 1, 0));
+Room.Teams.Add('Red', '<b><size=30><color=#962605>尺</color><color=#9a040c>ᴇ</color><color=#b8110b>D</color></size></b>', new Basic.Color(1, 0, 0, 0));
+let RedTeam = Room.Teams.Get('Red');
+let BlueTeam = Room.Teams.Get('Blue');
+BlueTeam.Spawns.SpawnPointsGroups.Add(1), 
+RedTeam.Spawns.SpawnPointsGroups.Add(2),
+BlueTeam.Build.BlocksSet.Value = Room.BuildBlocksSet.Blue,  
+RedTeam.Build.BlocksSet.Value = Room.Build.BlocksSet.Red;
 
 // Параметры, создания - комнаты;
 Room.Map.Rotation = Room.GameMode.Parameters.GetBool('MapRotation');
